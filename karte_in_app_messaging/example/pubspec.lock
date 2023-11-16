@@ -70,10 +70,9 @@ packages:
   karte_core:
     dependency: transitive
     description:
-      name: karte_core
-      sha256: c424ebf792b44ec6690857d10876589f283730c1ef2cda07f1618851b1b780f7
-      url: "https://pub.dev"
-    source: hosted
+      path: "../../karte_core"
+      relative: true
+    source: path
     version: "1.2.1"
   karte_in_app_messaging:
     dependency: "direct main"

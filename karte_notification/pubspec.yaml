@@ -4,6 +4,7 @@ description:
   Supports on Android and iOS.
 version: 1.3.0
 homepage: https://github.com/plaidev/karte-flutter/tree/master/karte_notification
+publish_to: none
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -12,9 +13,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  karte_core:
+    git:
+      url: https://github.com/guide-inc-org/guide-flutter_karte-flutter.git
+      path: karte_core
+      ref: kcmsr
 
   firebase_messaging: ">=10.0.0"
-  karte_core: ^1.0.0
 
 # dependency_overrides:
 #   firebase_core_platform_interface: <4.5.2
