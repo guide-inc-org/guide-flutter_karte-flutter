@@ -16,7 +16,7 @@ dependencies:
   firebase_messaging:
     git:
       url: https://github.com/guide-inc-org/guide-flutter_fire.git
-      ref: 682448257fb01e5392a1494462002fbee4e8b8a5
+      ref: kcfx/v2.27.0
       path: packages/firebase_messaging/firebase_messaging
   karte_core: ^1.0.0
 
