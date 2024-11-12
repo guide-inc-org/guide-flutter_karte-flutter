@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.android.tools.build:gradle:8.7.2'
         classpath 'org.yaml:snakeyaml:1.19'
     }
 }
@@ -26,12 +26,16 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 31
+    namespace "io.karte.flutter.core"
+    compileSdkVersion 34
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 23
         versionName version
         buildConfigField "String", "LIB_VERSION", "\"$version\""
+    }
+    buildFeatures {
+        buildConfig true
     }
     lintOptions {
         disable 'InvalidPackage'
