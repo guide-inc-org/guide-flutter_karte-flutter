@@ -86,6 +86,18 @@ class Notification {
         'Notification_handle', {'data': message.data}, false) as FutureOr<bool>;
   }
 
+  Future<bool> reachedTrackerAndroid() async {
+    if (!Platform.isAndroid) return false;
+    return await _channel.invokeMethod(
+        'Notification_reachedTracker', {'data': message.data}, false) as FutureOr<bool>;
+  }
+
+  Future<bool> clickTrackerAndroid() async {
+    if (!Platform.isAndroid) return false;
+    return await _channel.invokeMethod(
+        'Notification_clickTracker', {'data': message.data}, false) as FutureOr<bool>;
+  }
+
   /// iOS向け：通知のクリック計測を行います。
   ///
   /// 通常は自動でクリック計測が行われるため本メソッドを呼び出す必要はありませんが、

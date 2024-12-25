@@ -29,6 +29,8 @@ import io.flutter.plugin.common.PluginRegistry.Registrar
 import io.karte.android.core.logger.Logger
 import io.karte.android.notifications.MessageHandler
 import io.karte.android.notifications.Notifications
+import io.karte.android.notifications.internal.wrapper.RemoteMessageWrapper
+import io.karte.android.notifications.internal.track.ReachedTracker
 
 private const val LOG_TAG = "KarteFlutter"
 
@@ -91,6 +93,22 @@ class KarteNotificationPlugin : FlutterPlugin, MethodCallHandler {
                         call.argument<Map<String, String>>("data")
                     }
                     when (methodName) {
+                        "reachedTracker" -> {
+                            if (data != null) {
+                                ReachedTracker.sendIfNeeded(RemoteMessageWrapper(data))
+                                result.success(true)
+                            } else {
+                                result.success(false)
+                            }
+                        }
+                        "clickTracker" -> {
+                            if (data != null) {
+                                ClickTracker.sendIfNeeded(RemoteMessageWrapper(data))
+                                result.success(true)
+                            } else {
+                                result.success(false)
+                            }
+                        }
                         "canHandle" -> {
                             if (data != null) {
                                 result.success(MessageHandler.canHandleMessage(data))

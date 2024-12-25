@@ -17,7 +17,7 @@ dependencies:
     git:
       url: https://github.com/guide-inc-org/guide-flutter_karte-flutter.git
       path: karte_core
-      ref: kcmsr
+      ref: kc_guide/kcmsr
 
   firebase_messaging: ">=10.0.0"
 
